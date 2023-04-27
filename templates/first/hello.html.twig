@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hello</title>
 </head>
 <body>
+    <img src="{{asset('assets/image/') ~ path | defaultImage}}" alt="">
     <p>Hello <strong>{{nom | capitalize}} {{prenom | capitalize}}</strong></p>
     <h5>aujourdh'hui est le {{ "now"|date('d-m-Y') }}</h5>
 </body>
