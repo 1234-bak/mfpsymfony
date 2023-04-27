@@ -18,7 +18,7 @@ class TabController extends AbstractController
         $moy = array_sum($notes) / $nb;
         return $this->render('tab/index.html.twig', [
             'notes' => $notes,
-            'moy' => $moy
+            'moyenne' => $moy
         ]);
     }
 }
