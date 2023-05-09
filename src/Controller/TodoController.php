@@ -12,8 +12,7 @@ use Symfony\Component\Validator\Constraints\Length;
 class TodoController extends AbstractController
 {
     #[Route('/', name: 'app_todo')]
-    public function index(Request $request): Response
-    {
+    public function index(Request $request): Response{
         $session = $request->getSession();
         //Afficher la liste du tableau
 

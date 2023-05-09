@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
-    <title>Tableau des notes</title>
-</head>
-<body>
-    <table class="table">
-        {% for note in notes %}
-            <tr>
-                <td>{{note}}</td>
-            </tr>
-        {% endfor %}
-    </table>
+
+    {% extends 'template.html.twig' %}
+    
+    {% block body %}
+        <table class="table">
+            {% for note in notes %}
+                <tr>
+                    <td>{{note}}</td>
+                </tr>
+            {% endfor %}
+        </table>
 
         <div class="alert alert-info">
             <p>nombre de notes: {{notes | length}}</p>
@@ -22,5 +16,12 @@
             <p>note minimale: {{min(notes)}}</p>
             <p>moyenne des notes : {{moyenne}}</p>
         </div>
-</body>
-</html>
+    {% endblock %}
+
+    {% block pagetitle %}
+        Tableau des notes
+    {% endblock %}
+
+    {% block title %}
+        Tableau
+    {% endblock %}

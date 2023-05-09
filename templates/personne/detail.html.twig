@@ -1,0 +1,17 @@
+{% extends 'template.html.twig' %}
+
+{% block body %}
+    {{ dump(personne) }}
+    <div class="alert alert-success">
+        {{personne.firtname}} {{personne.name}} a {{personne.age}} ans
+        et est un {{personne.job}}
+    </div>
+{% endblock %}
+
+{% block pagetitle %}
+    opération de persistence sur l'entité personne
+{% endblock %}
+
+{% block title %}
+    opération de persistence sur l'entité personne
+{% endblock %}

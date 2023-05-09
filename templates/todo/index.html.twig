@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css') }}">
-    <title>Todo</title>
-</head>
-<body>
-    {% for message in app.session.flashBag.get('info') %}
-        <div class="alert alert-primary" role="alert">
-            {{message}}
-        </div>
-    {% endfor %}
-    {% for message in app.session.flashBag.get('success') %}
-        <div class="alert alert-success" role="alert">
-            {{message}}
-        </div>
-    {% endfor %}
-    {% for message in app.session.flashBag.get('error') %}
-        <div class="alert alert-danger" role="alert">
-            {{message}}
-        </div>
-    {% endfor %}
+{% extends 'template.html.twig' %}
 
+{% block body %}
     <ol class="list-group" >
         {% for name,content in app.session.get('todos') %}
                 <li class="list-group-item">
@@ -32,5 +9,12 @@
         {% endfor %}
     </ol><br>
     <h4>la liste des todos contient <strong>{{app.session.get('todos')|length}}</strong> élément</h4>
-</body>
-</html>
+{% endblock %}
+
+{% block pagetitle %}
+    Listes des todos
+{% endblock %}
+
+{% block title %}
+    page todo
+{% endblock %}
